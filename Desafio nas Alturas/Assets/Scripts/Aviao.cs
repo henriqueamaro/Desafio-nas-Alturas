@@ -11,14 +11,24 @@ public class Aviao : MonoBehaviour
     {
         
         {
+            //Debug.log("Acordei")
             this.fisica = this.GetComponent<Rigidbody2D>();
         }
     }
+
+    private void Impulsionar()
+    {
+        this.fisica.AddForce(Vector2.up * 10f, ForceMode2D.Impulse);
+    }
+
+
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("Clicou");
+            Impulsionar();
+
         }
     }
 }
