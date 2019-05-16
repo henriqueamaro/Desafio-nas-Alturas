@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Diretor : MonoBehaviour
 {
-    
+    public GameObject imagemGameOver;
     public void FinalizarJogo()
     {
         Time.timeScale = 0;
+        imagemGameOver.SetActive(true);
         Debug.Log("Finalizar Jogo");
     }
     // Start is called before the first frame update
