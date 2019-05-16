@@ -10,16 +10,28 @@ public class Aviao : MonoBehaviour
 
     private Diretor diretor;
 
+    private Vector3 posicaoInicial;
+    [SerializeField]
     private float forca = 10f;
+
     private void Awake()
     {
              
             
         this.fisica = this.GetComponent<Rigidbody2D>();
         diretor = GameObject.FindObjectOfType<Diretor>();
+        posicaoInicial = this.transform.position;
 
         
     }
+
+
+    public void Reniciar()
+    {
+        this.transform.position = posicaoInicial;
+        this.fisica.simulated = true;
+    }
+
 
     private void Impulsionar()
     {

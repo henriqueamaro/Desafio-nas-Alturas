@@ -22,10 +22,10 @@ public class Obstaculos : MonoBehaviour
     }
 
 
-    private void Destruir()
+     public void Destruir()
     {
         GameObject.Destroy(this.gameObject);
-        //Debug.Log("C");
+        Debug.Log("Colidiu");
     }
 
     // Update is called once per frame
