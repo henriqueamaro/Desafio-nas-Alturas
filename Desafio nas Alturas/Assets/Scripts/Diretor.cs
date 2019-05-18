@@ -7,6 +7,11 @@ public class Diretor : MonoBehaviour
     public GameObject imagemGameOver;
     [SerializeField]
     private Aviao avião;
+    private Pontuacao pontuacao;
+
+    
+
+    
 
     public void FinalizarJogo()
     {
@@ -18,6 +23,7 @@ public class Diretor : MonoBehaviour
     void Start()
     {
         avião = GameObject.FindObjectOfType<Aviao>();
+        pontuacao = GameObject.FindObjectOfType<Pontuacao>();
     }
 
 
@@ -28,6 +34,7 @@ public class Diretor : MonoBehaviour
         avião.Reniciar();
         imagemGameOver.SetActive(false);
         Time.timeScale = 1;
+        pontuacao.Reiniciar();
         //Destruir os obstaculos
         Debug.Log("Reiniciou");
     }
